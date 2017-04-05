@@ -6,7 +6,7 @@
 
 * In order to use JSON format, it is used the binary dependency of "jackson-dataformat", similarly Mockito and Junit are used for testing framework.
 
-** Description **
+**Description**
 
 > POST : http://localhost:8080/AdCampaign/api/ad/ is used to create the ad campaign with request body with JSON format.
 
