@@ -8,6 +8,13 @@
 
 ** Description
 
+* POST : http://localhost:8080/AdCampaign/api/ad/ is used to create the ad campaign with request body with JSON format.
+
+* GET : http://localhost:8080/AdCampaign/api/ad/{partnerId} is used to fetch the particular active ad campaign(i.e valid till current time + its duration specified) in the memory where {partnerID} is the path variable to fetch selectively.
+
+* GET : http://localhost:8080/AdCampaign/api/ad/ is used to fetch all the ad campaign.
+
+
 
 
 
