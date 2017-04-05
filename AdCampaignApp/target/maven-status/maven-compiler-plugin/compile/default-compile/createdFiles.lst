@@ -1,6 +1,6 @@
 com/simple/web/controller/RestApiController.class
 com/simple/web/service/AdCampaignServiceImpl.class
 com/simple/web/util/CustomFaultType.class
-com/simple/web/AdCampaignApp.class
 com/simple/web/service/AdCampaignService.class
+com/simple/web/AdCampaignApp.class
 com/simple/web/model/AdCampaign.class

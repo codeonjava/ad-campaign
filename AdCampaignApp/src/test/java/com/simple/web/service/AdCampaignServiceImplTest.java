@@ -13,43 +13,41 @@ import org.mockito.MockitoAnnotations;
 import com.simple.web.model.AdCampaign;
 
 public class AdCampaignServiceImplTest {
-	
+
 	@Mock
 	private AdCampaignService adCampaignService;
-	
-	
+
 	@Before
-	public void setUp(){
+	public void setUp() {
 		MockitoAnnotations.initMocks(this);
 	}
-	
+
 	@Test
-	public void testFindActiveCampaignExist(){
+	public void testFindActiveCampaignExist() {
 		adCampaignService.findActiveCampaignExist("Ruby");
 	}
-	
+
 	@Test
-	public void testSaveAdCampaign(){
+	public void testSaveAdCampaign() {
 		verify(adCampaignService, atLeast(0)).saveAdCampaign(getAdCampaign());
-		
+
 	}
-	
+
 	@Test
-	public void testActiveStatus(){
+	public void testActiveStatus() {
 		assertNotNull(getAdCampaign().getPartnerId());
 		assertFalse(adCampaignService.isActiveStatus(getAdCampaign().getPartnerId()));
 		assertFalse(adCampaignService.isActiveStatus(""));
-		
-		
+
 	}
-	
-	private AdCampaign getAdCampaign(){
+
+	private AdCampaign getAdCampaign() {
 		AdCampaign adCampaign = new AdCampaign();
 		adCampaign.setDuration(6000);
 		adCampaign.setPartnerId("Ruby");
 		adCampaign.setAdDisplayContents("Ad Content");
 		return adCampaign;
-		
+
 	}
 
 }

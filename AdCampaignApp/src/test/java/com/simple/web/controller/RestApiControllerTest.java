@@ -14,44 +14,39 @@ import com.simple.web.model.AdCampaign;
 import com.simple.web.service.AdCampaignService;
 
 public class RestApiControllerTest {
-	
-	
+
 	@Mock
 	private AdCampaignService adCampaignService;
-	
+
 	@InjectMocks
 	private RestApiController restApiController;
-	
+
 	@Before
-	public void setUp(){
+	public void setUp() {
 		MockitoAnnotations.initMocks(this);
 	}
-	
+
 	@Test
-	public void testGetUser(){
+	public void testGetUser() {
 		when(adCampaignService.findActiveCampaignExist("Ruby")).thenReturn(getAdCampaign());
 		restApiController.fetchAdCampaign(getAdCampaign().getPartnerId());
 	}
-	
+
 	@Test
-	public void testCreateAdCampaign(){
+	public void testCreateAdCampaign() {
 		when(adCampaignService.isActiveStatus(getAdCampaign().getPartnerId())).thenReturn(anyBoolean());
 		assertFalse(adCampaignService.isActiveStatus(getAdCampaign().getPartnerId()));
 		restApiController.createAdCampaign(getAdCampaign());
-		
+
 	}
-	
-	
-	
-	private AdCampaign getAdCampaign(){
+
+	private AdCampaign getAdCampaign() {
 		AdCampaign adCampaign = new AdCampaign();
 		adCampaign.setDuration(6000);
 		adCampaign.setPartnerId("Ruby");
 		adCampaign.setAdDisplayContents("Ad Content");
 		return adCampaign;
-		
+
 	}
-	
-	
 
 }
